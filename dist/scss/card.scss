@@ -1,0 +1,570 @@
+/* MOBILE FIRST DESIGN */
+
+// Variables
+$perspective: 1300px;
+
+
+.profile-container {
+    
+    display: grid;
+    
+    width: 100%;
+    height:100%;
+    
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    
+    margin: 1.5em 1em;
+    
+    user-select: none;
+}
+
+.card-front,
+.card-back {
+    
+    height: 85%;
+    width: 90%;
+    
+    position: absolute;
+    
+    backface-visibility: hidden;
+    
+    border-radius: .5em;
+    
+    transition: transform 1s;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .5);
+    
+    overflow: hidden;
+    
+}
+
+// ************** CARD FRONT ************** //
+
+.card-front {
+
+    background-color: #95BBDF;
+    // background-image: url(https://picsum.photos/id/1025/200/300);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    border: 2px solid black;
+
+    transform: perspective($perspective) rotateY(0deg);
+
+    & > *{
+
+        position: absolute
+
+    }
+
+    .picture {
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+
+        height: 100%;
+        width: 80%;
+
+        background-image: url(https://picsum.photos/id/1025/200/300);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        border-left: 2px solid black;
+
+    }
+
+    // *** HEADER *** //
+
+    .header {
+        
+        display: grid;
+
+        width: 100%;
+
+        position: relative;
+        justify-items: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        margin-top: 1.5em;
+        padding: 1%;
+
+        // background-color: deeppink;
+
+    }
+
+    .level {
+
+        position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            display: grid;
+
+            height: 2em;
+            width: 2em;
+
+            justify-items: center;
+            align-items: center;
+
+            margin-left: 1em;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0.1em rgba(255, 255, 255, 1),
+                        0 0 0 0.3em black;
+
+            color:white;
+
+            background-color: black
+
+    }
+
+    .profession{
+
+        color: white;
+        text-align: center;
+        text-transform: capitalize;
+
+    }
+
+    .strip {
+
+        width: 100%;
+        height: 1.7em;
+        
+        position: absolute;
+        z-index: -1;
+
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+
+        background-color: gray;
+
+    }
+
+    // *** STATS *** //
+
+    .stats {
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 0em;
+
+        height: 100%;
+        width: 20%;
+
+        left: 0;
+        top: 0;
+        align-items: center;
+        justify-items: start;
+
+        padding: 0;
+        padding-top: 4.5em;
+        padding-bottom: 4em;
+
+        color: white;
+        background-color: darkslategrey;
+
+        overflow: hidden;
+
+        & > * {
+
+            display: grid;
+            grid-template-columns: 1fr;
+            
+            margin: 0 auto;
+
+        }
+
+        .value {
+
+            display: grid;
+
+            justify-items: center;
+            align-items: center;
+
+            background-color: gray;
+            z-index: 0;
+
+            width: 80%;
+            padding: .5em .6em;
+            padding-top: 50%;
+
+            transform: translateY(-30%) translateX(10%);
+
+            border: 2px solid black;
+
+        }
+
+    }
+
+    .stat-icon {
+
+        z-index: 1;
+
+        padding: 1.5em;
+        border-radius: 50%;
+
+        background-size: 1.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        background-color: black;
+
+        box-shadow: 0 0 0 0.1em rgba(255, 255, 255, 1),
+                    0 0 0 0.3em black;
+
+
+    }
+
+    .melee .stat-icon{
+
+        background-image: url(https://svgshare.com/i/CtD.svg);
+
+    }
+
+    .range .stat-icon{
+
+        background-image: url(https://svgshare.com/i/CtQ.svg);
+
+    }
+
+    .defense .stat-icon{
+
+        background-image: url(https://svgshare.com/i/Ct5.svg);
+
+    }
+
+    // *** FOOTER *** //
+
+    .footer {
+
+        display: grid;
+        grid-template-areas: "health health";
+
+        height: auto;                     
+        width: 80%;
+
+        position: absolute;
+        bottom: 3em;
+        right: 0;
+
+        // margin-bottom: 3em;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 3px solid black;
+
+        color: white;
+
+        background-color: white;
+        background-size: 50%;
+
+        z-index: 10;
+
+        & > * {
+
+            text-align: center;
+
+        }
+
+    }
+
+    .health {
+
+        grid-area: health;
+
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: "damage health heal";
+
+        justify-items: center;
+        align-items: center;
+
+        
+        color: black;
+        font-weight: bold;
+
+        .heal, .damage{
+
+            display: grid;
+
+            height: 2em;
+            width: 2em;
+            
+            align-items: center;
+
+            font-size: 1.5em;
+
+            box-sizing: border-box;
+            cursor: pointer;
+
+        }
+
+        .heal {
+
+            grid-area: heal;
+
+        }
+
+        .health-bar {
+
+            grid-area: health;
+            
+            display: block;
+            
+            background-color: gray;
+            
+            position: relative;
+            width: 100%;
+            height: 1em;
+
+            z-index: 3;
+
+            overflow: hidden;
+
+            .content {
+
+                display: block;
+
+                height: 100%;
+                width: 100%;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                background-color: green;
+                transition: transform .5s ease-out;
+
+            }
+
+            .cover {
+
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: repeat(auto, 1fr);
+
+                height: 100%;
+                width: 100%;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 3;
+
+                border: 2px solid black;
+
+                background-color: transparent;
+
+                color: black;
+
+                div { border: 2px solid black }
+
+            }
+
+        }
+
+    }
+
+    .bottom-atributes {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        position: absolute;
+        justify-content: center;
+        align-content: center;
+
+        width: 100%;
+        height: 3.5em;
+
+        left: 0;
+        bottom: 0;
+        
+        color: white;
+        font-weight: 550;
+        font-size: .9em;
+        letter-spacing: 2px;
+        text-align: center;
+
+        padding: .5em;
+        
+        background: black;
+
+
+    }
+
+}
+
+
+       
+// ************** CARD BACK *************** //
+
+.card-back {
+
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-areas: "stat  melee"
+                         "stat  range"
+                         "stat  armor"
+                         "stat  button";
+    grid-gap: 0em;
+
+    border: 2px solid black;
+
+    background: #eee;
+
+    transform: perspective($perspective) rotateY(-180deg);
+
+    .stats {
+
+        grid-area: stat;
+
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 1em;
+
+        margin: 1em;
+
+        & > * {
+
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-rows: auto 1fr;
+
+            justify-items: center;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            padding: .5em;
+
+            color: white;
+            font-weight: bold;
+            font-size: 1.3em;
+
+            background-color: black;
+            box-shadow: 0 0 0 2px white,
+                        0 0 0 4px black;
+
+        }
+    }
+
+    .melee-weapon,
+    .range-weapon,
+    .armor {
+
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: 1fr 2fr;
+
+        align-items: center;
+
+        margin: 1em;
+
+    }
+
+    .title {
+
+        color: black;
+
+    }
+
+    .type {
+
+        color: #333;
+
+    }
+
+    .melee-weapon {
+        
+        grid-area: melee;
+
+    }
+
+    .range-weapon {
+        grid-area: range;
+    }
+
+    .armor {
+
+        grid-area: armor;
+        
+        display: grid;
+        grid-template-areas: "title shield"
+                             "type  type";
+
+        padding: .5em 0;
+
+        .shield {
+
+            grid-area: shield;
+
+            height: 1.5em;
+            width: 1.5em;
+
+            align-self: right;
+
+            background-image: url(/dist/scr/svg/shield-black.svg);
+            background-size: cover;
+            background-position: center center;
+
+        }
+
+        .title {
+
+            grid-area: title;
+
+        }
+
+        .type {
+
+            grid-area: type;
+
+        }
+        
+    }
+
+    .button {
+
+        grid-area: button;
+
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        button {
+
+            height: auto;
+            width: 90%;
+
+            margin: 0 1em 4px 0;
+            border: none;
+            padding: 1em 0;
+
+            background-color: darkslategrey;
+            box-shadow: 0 0 0 2px white,
+                        0 0 0 4px black;
+
+            color: white;
+            font-weight: bold;
+            font-size: .7em;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+
+
+        }
+
+    }
+}

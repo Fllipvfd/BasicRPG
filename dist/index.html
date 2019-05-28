@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Basic RPG</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/solid.js" integrity="sha384-IA6YnujJIO+z1m4NKyAGvZ9Wmxrd4Px8WFqhFcgRmwLaJaiwijYgApVpo1MV8p77" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script>
+
+    
+</head>
+<body>
+    <!-- Wrapper START -->
+    <div id="wrapper">
+
+
+<!-- ******************** HOMESCREEN ******************** -->
+
+        <div class="homescreen">
+                <h1>BASIC RPG</h1>
+                <div class="btn-group">
+                    <button class="options-btn create">
+                        <span>CREATE NEW CHARACTER</span></button>
+                    <button class="options-btn load"> <span>LOAD LAST CHARACTER</span></button>
+                </div>
+                
+        </div>
+
+
+<!-- ******************** FORMS ******************** -->
+
+        <form action="#" class="hide">
+
+            <div class="help"></div>
+
+            <div class="input-container profession">
+                <span class="title">Profession</span>
+                <input type="text">
+            </div>
+
+            <div class="input-container advantage">
+                <h2 class="title">Advantage</h2>
+                <span>Strength</span>
+                <input type="radio" name="advantage" value="0" checked>
+                <span>Dexterity</span>
+                <input type="radio" name="advantage" value="1">
+                <span>Intelligence</span>
+                <input type="radio" name="advantage" value="2">
+                <span>Charisma</span>
+                <input type="radio" name="advantage" value="3">
+            </div>
+            
+            <div class="input-container disadvantage">
+                <h2 class="title">Disadvantage</h2>
+                <span>Strength</span>
+                <input type="radio" name="disadvantage" value="0">
+                <span>Dexterity</span>
+                <input type="radio" name="disadvantage" value="1">
+                <span>Intelligence</span>
+                <input type="radio" name="disadvantage" value="2">
+                <span>Charisma</span>
+                <input type="radio" name="disadvantage" value="3" checked>
+            </div>
+            
+            <div class="input-container melee-weapon">
+                <span class="title">Melee Weapon</span>
+                <select name="" id="">
+                    <option value="2">Fist</option>
+                    <option value="2">Light Weapon</option>
+                    <option value="4">Medium Weapon</option>
+                    <option value="6">Heavy Weapon</option>
+                </select>
+            </div>
+           
+
+            <div class="input-container range-weapon">
+                <span class="title">Range Weapon</span>
+                <select name="" id="">
+                    <option value="0">None</option>
+                    <option value="2">Light Weapon</option>
+                    <option value="4">Medium Weapon</option>
+                    <option value="6">Heavy Weapon</option>
+                </select>
+            </div>
+
+            <div class="input-container armor">
+                <span class="title">Armor</span>
+                <select name="" id="">
+                    <option value="0">None</option>
+                    <option value="1">Light Armor</option>
+                    <option value="2">Medium Armor</option>
+                    <option value="3">Heavy Armor</option>
+                </select>
+            </div>
+
+            <div class="input-container shield">
+                <span class="title">Shield</span>
+                <input type="checkbox" name="" id="">
+            </div>
+
+            <div class="input-container name">
+                <span class="title">Character Name</span>
+                <input type="text">
+            </div>
+
+            <div class="input-container level">
+                    <span class="title">Level</span>
+                    <select name="" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+
+            <button type="submit"></button>
+
+        </form>
+
+
+<!-- ******************** PLAYER CARD ******************** -->
+
+        <div class="profile-container player-card hide">
+
+                <div class="card-front">
+
+                    <div class="picture"></div>
+                    <!-- <p class="card-body">FRONT</p> -->
+                    <div class="header">
+                        <div class="level"></div>
+                        <div class="profession"></div>
+                        <div class="strip"></div>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat melee">
+                            <span class="stat-icon"></span>
+                            <span class="value"></span>
+                        </div>
+                        <div class="stat range">
+                            <span class="stat-icon"></span>
+                            <span class="value"></span>
+                        </div>
+                        <div class="stat defense">
+                            <span class="stat-icon"></span>
+                            <span class="value"></span></div>
+                    </div>
+
+                    <div class="footer">
+                        <div class="health">
+                            <span class="damage">-</span>
+                            <div class="health-bar">
+                            <div class="content animated" style="transform: translateX(0)"></div>
+                            <div class="cover">
+                            </div>                        
+                        </div>
+                            <span class="heal">+</span>
+                        </div>
+                    </div>
+
+                    <div class="bottom-atributes">
+                        <div class="advantage"> </div>
+                        <div class="disadvantage"> </div>
+                    </div> 
+                </div>
+<!-- *********************************************************************** -->
+                <div class="card-back ">
+                    <div class="stats">
+                        <div class="stat strength">
+                            <span class="attribute">STR</span>
+                            <span class="value"></span>
+                        </div>
+                        <div class="stat dexterity">
+                            <span class="attribute">DEX</span>
+                            <span class="value"></span>
+                        </div>
+                        <div class="stat intelligence">
+                            <span class="attribute">INT</span>
+                            <span class="value"></span>
+                        </div>
+                        <div class="stat charisma">
+                            <span class="attribute">CHA</span>
+                            <span class="value"></span>
+                        </div>
+                    </div>
+                    <div class="melee-weapon">
+                        <span class="title">MELEE WEAPON</span>
+                        <span class="type"></span>
+                    </div>
+                    <div class="range-weapon">
+                        <span class="title">RANGE WEAPON</span>
+                        <span class="type"></span>
+                    </div>
+                    <div class="armor">
+                        <span class="title">ARMOR</span>
+                        <span class="shield"></span>
+                        <span class="type"></span>
+                    </div>
+                    <div class="button">
+                        <button>Edit</button>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- Wrapper END -->
+
+    
+
+    <!-- *************** MAIN SCRIPT *************** -->
+
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+.homescreen {
+
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+
+    height: 90%;
+    width: 90%;
+
+    position: relative;
+    justify-items: center;
+
+    border-radius: .3em;
+    padding: 1em;
+
+    color: white;
+
+    background-color: #2f4f4fcc;
+    box-shadow: 0 .2em .5em .2em rgba(0, 0, 0, .50);
+
+    overflow: scroll;
+    box-sizing: border-box;
+
+    h1 {
+
+        display: inline-block;
+
+        position: absolute;
+        top: 20%;
+
+        margin-bottom: 2em;
+
+        color: #ffffff;
+
+    }
+
+    .btn-group {
+
+        position: absolute;
+
+        display: grid;
+
+        top: 50%;
+        // transform: translateY(-50%)
+
+    }
+
+    button {
+
+        display: grid;
+
+        height: 3em;
+        width: 80vw;
+
+        margin-bottom: 1.5em;
+        padding: 0;
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        border-radius: 2.5em;
+        border: 2px solid white;
+
+        align-content: center;
+
+        color: white;
+
+        background-color: transparent;;
+
+        &:last-child {
+
+        margin-bottom: 0;
+
+        
+        }
+
+        &:hover,
+        &:active {
+
+            background-color: #ffffff;
+            color: #607D8B;
+
+        }
+    
+    }
+
+}

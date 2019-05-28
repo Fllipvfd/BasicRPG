@@ -1,0 +1,183 @@
+form {
+    
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+
+    height: 90%;
+    width: 90%;
+
+    position: absolute;
+
+    border-radius: .3em;
+    padding: 1em;
+
+    color: white;
+
+    background-color: #2f4f4fcc;
+    box-shadow: 0 .2em .5em .2em rgba(0, 0, 0, .50);
+
+    overflow: scroll;
+    box-sizing: border-box;
+
+    .help {
+
+        position: fixed;
+
+        right: calc(5% + 1em);
+        top: calc(5% + 1em);
+
+        height: 1.5em;
+        width: 1.5em;
+
+        background-image: url(https://svgshare.com/i/CtJ.svg);
+        background-size: cover;
+        background-position: center center;
+
+        cursor: pointer;
+
+    }
+
+    .input-container {
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        padding: 1em;
+
+
+    }
+
+    input[type="text"] {
+
+        height: 3em;
+
+        border: 2px solid #fff;
+        border-radius: 1.5em;
+        padding: 1em;
+
+        color: white;
+
+        background-color: transparent;
+
+    }
+
+    input[type="radio"] {
+
+        height: 1em;
+
+    }
+
+    select {
+
+        height: 3em;
+
+        border: 2px solid #fff;
+        padding: .5em;
+
+        color: white;
+
+        background-color: transparent;
+
+        appearance: none;
+
+    }
+
+    .advantage,
+    .disadvantage {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: .5em;
+
+        span{
+
+            text-align: right;
+
+        }
+   
+    }
+
+    button {
+
+        position: relative;
+
+        border: none;
+
+        padding: 3em 0 5em 0;
+
+        background-color: transparent;
+
+        &:after {
+
+            display: grid;
+            content: "Create Character";
+
+            position: absolute;
+            transform: translateX(-50%) translateY(-70%);
+            left: 50%;
+
+            height: 3em;
+            width: 70%;
+
+            border: 2px solid white;
+            border-radius: 1.5em;
+
+            align-content: center;
+            color: white;
+            font-size: 1em;
+
+            background: transparent;
+            
+        }
+        
+        &:hover::after {
+
+            color: #607D8B;
+
+            background: #fff;
+
+            }
+
+    }
+
+    .title {
+    
+        grid-column: 1/-1;
+
+        padding: .5em;
+        margin-bottom: 1em;
+        
+        font-size: 1.3em;
+        font-weight: 500;
+
+    
+    }
+
+    .shield{
+
+        display: grid;
+        grid-template-columns: auto 1fr;
+
+        position: relative;
+
+        align-content: center;
+        justify-content: center;
+
+        input {
+
+            height: 1em;
+            margin: 1em;
+            justify-self: left;
+
+        }
+
+        .title {
+            
+            grid-column: span 1;
+        }
+
+    }
+
+}

@@ -1,0 +1,600 @@
+.homescreen {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: .5em;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  height: 90%;
+  width: 90%;
+  position: relative;
+  justify-items: center;
+  border-radius: .3em;
+  padding: 1em;
+  color: white;
+  background-color: #2f4f4fcc;
+  -webkit-box-shadow: 0 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.5);
+  overflow: scroll;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .homescreen h1 {
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    margin-bottom: 2em;
+    color: #ffffff; }
+  .homescreen .btn-group {
+    position: absolute;
+    display: -ms-grid;
+    display: grid;
+    top: 50%; }
+  .homescreen button {
+    display: -ms-grid;
+    display: grid;
+    height: 3em;
+    width: 80vw;
+    margin-bottom: 1.5em;
+    padding: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 2.5em;
+    border: 2px solid white;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    color: white;
+    background-color: transparent; }
+    .homescreen button:last-child {
+      margin-bottom: 0; }
+    .homescreen button:hover, .homescreen button:active {
+      background-color: #ffffff;
+      color: #607D8B; }
+
+form {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: .5em;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  border-radius: .3em;
+  padding: 1em;
+  color: white;
+  background-color: #2f4f4fcc;
+  -webkit-box-shadow: 0 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.5);
+  overflow: scroll;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  form .help {
+    position: fixed;
+    right: calc(5% + 1em);
+    top: calc(5% + 1em);
+    height: 1.5em;
+    width: 1.5em;
+    background-image: url(https://svgshare.com/i/CtJ.svg);
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer; }
+  form .input-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 1em; }
+  form input[type="text"] {
+    height: 3em;
+    border: 2px solid #fff;
+    border-radius: 1.5em;
+    padding: 1em;
+    color: white;
+    background-color: transparent; }
+  form input[type="radio"] {
+    height: 1em; }
+  form select {
+    height: 3em;
+    border: 2px solid #fff;
+    padding: .5em;
+    color: white;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  form .advantage,
+  form .disadvantage {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .5em; }
+    form .advantage span,
+    form .disadvantage span {
+      text-align: right; }
+  form button {
+    position: relative;
+    border: none;
+    padding: 3em 0 5em 0;
+    background-color: transparent; }
+    form button:after {
+      display: -ms-grid;
+      display: grid;
+      content: "Create Character";
+      position: absolute;
+      -webkit-transform: translateX(-50%) translateY(-70%);
+      -ms-transform: translateX(-50%) translateY(-70%);
+      transform: translateX(-50%) translateY(-70%);
+      left: 50%;
+      height: 3em;
+      width: 70%;
+      border: 2px solid white;
+      border-radius: 1.5em;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      color: white;
+      font-size: 1em;
+      background: transparent; }
+    form button:hover::after {
+      color: #607D8B;
+      background: #fff; }
+  form .title {
+    grid-column: 1/-1;
+    padding: .5em;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: 500; }
+  form .shield {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+    grid-template-columns: auto 1fr;
+    position: relative;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    form .shield input {
+      height: 1em;
+      margin: 1em;
+      -ms-grid-column-align: left;
+      justify-self: left; }
+    form .shield .title {
+      -ms-grid-column-span: 1;
+      grid-column: span 1; }
+
+/* MOBILE FIRST DESIGN */
+.profile-container {
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 1.5em 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.card-front,
+.card-back {
+  height: 85%;
+  width: 90%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: .5em;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden; }
+
+.card-front {
+  background-color: #95BBDF;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: 2px solid black;
+  -webkit-transform: perspective(1300px) rotateY(0deg);
+  transform: perspective(1300px) rotateY(0deg); }
+  .card-front > * {
+    position: absolute; }
+  .card-front .picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 80%;
+    background-image: url(https://picsum.photos/id/1025/200/300);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-left: 2px solid black; }
+  .card-front .header {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    position: relative;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin-top: 1.5em;
+    padding: 1%; }
+  .card-front .level {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: -ms-grid;
+    display: grid;
+    height: 2em;
+    width: 2em;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 1em;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 0 0.1em white, 0 0 0 0.3em black;
+    box-shadow: 0 0 0 0.1em white, 0 0 0 0.3em black;
+    color: white;
+    background-color: black; }
+  .card-front .profession {
+    color: white;
+    text-align: center;
+    text-transform: capitalize; }
+  .card-front .strip {
+    width: 100%;
+    height: 1.7em;
+    position: absolute;
+    z-index: -1;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: gray; }
+  .card-front .stats {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (1fr)[3];
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0em;
+    height: 100%;
+    width: 20%;
+    left: 0;
+    top: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-items: start;
+    padding: 0;
+    padding-top: 4.5em;
+    padding-bottom: 4em;
+    color: white;
+    background-color: darkslategrey;
+    overflow: hidden; }
+    .card-front .stats > * {
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      margin: 0 auto; }
+    .card-front .stats .value {
+      display: -ms-grid;
+      display: grid;
+      justify-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: gray;
+      z-index: 0;
+      width: 80%;
+      padding: .5em .6em;
+      padding-top: 50%;
+      -webkit-transform: translateY(-30%) translateX(10%);
+      -ms-transform: translateY(-30%) translateX(10%);
+      transform: translateY(-30%) translateX(10%);
+      border: 2px solid black; }
+  .card-front .stat-icon {
+    z-index: 1;
+    padding: 1.5em;
+    border-radius: 50%;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: black;
+    -webkit-box-shadow: 0 0 0 0.1em white, 0 0 0 0.3em black;
+    box-shadow: 0 0 0 0.1em white, 0 0 0 0.3em black; }
+  .card-front .melee .stat-icon {
+    background-image: url(https://svgshare.com/i/CtD.svg); }
+  .card-front .range .stat-icon {
+    background-image: url(https://svgshare.com/i/CtQ.svg); }
+  .card-front .defense .stat-icon {
+    background-image: url(https://svgshare.com/i/Ct5.svg); }
+  .card-front .footer {
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "health health";
+    height: auto;
+    width: 80%;
+    position: absolute;
+    bottom: 3em;
+    right: 0;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 3px solid black;
+    color: white;
+    background-color: white;
+    background-size: 50%;
+    z-index: 10; }
+    .card-front .footer > * {
+      text-align: center; }
+  .card-front .health {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: health;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "damage health heal";
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: black;
+    font-weight: bold; }
+    .card-front .health .heal, .card-front .health .damage {
+      display: -ms-grid;
+      display: grid;
+      height: 2em;
+      width: 2em;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-size: 1.5em;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      cursor: pointer; }
+    .card-front .health .heal {
+      -ms-grid-row: 1;
+      -ms-grid-column: 3;
+      grid-area: heal; }
+    .card-front .health .health-bar {
+      -ms-grid-row: 1;
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 1;
+      grid-area: health;
+      display: block;
+      background-color: gray;
+      position: relative;
+      width: 100%;
+      height: 1em;
+      z-index: 3;
+      overflow: hidden; }
+      .card-front .health .health-bar .content {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: green;
+        -webkit-transition: -webkit-transform .5s ease-out;
+        transition: -webkit-transform .5s ease-out;
+        -o-transition: transform .5s ease-out;
+        transition: transform .5s ease-out;
+        transition: transform .5s ease-out, -webkit-transform .5s ease-out; }
+      .card-front .health .health-bar .cover {
+        display: -ms-grid;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: repeat(auto, 1fr);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        border: 2px solid black;
+        background-color: transparent;
+        color: black; }
+        .card-front .health .health-bar .cover div {
+          border: 2px solid black; }
+  .card-front .bottom-atributes {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    width: 100%;
+    height: 3.5em;
+    left: 0;
+    bottom: 0;
+    color: white;
+    font-weight: 550;
+    font-size: .9em;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: .5em;
+    background: black; }
+
+.card-back {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-areas: "stat  melee" "stat  range" "stat  armor" "stat  button";
+  grid-gap: 0em;
+  border: 2px solid black;
+  background: #eee;
+  -webkit-transform: perspective(1300px) rotateY(-180deg);
+  transform: perspective(1300px) rotateY(-180deg); }
+  .card-back .stats {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 7;
+    -ms-grid-column: 1;
+    grid-area: stat;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: row;
+    -ms-grid-rows: (1fr)[4];
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 1em;
+    margin: 1em; }
+    .card-back .stats > * {
+      display: -ms-grid;
+      display: grid;
+      grid-auto-flow: row;
+      -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+      justify-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding: .5em;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3em;
+      background-color: black;
+      -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px black; }
+  .card-back .melee-weapon,
+  .card-back .range-weapon,
+  .card-back .armor {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: row;
+    -ms-grid-rows: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 1em; }
+  .card-back .title {
+    color: black; }
+  .card-back .type {
+    color: #333; }
+  .card-back .melee-weapon {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: melee; }
+  .card-back .range-weapon {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: range; }
+  .card-back .armor {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+    grid-area: armor;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "title shield" "type  type";
+    padding: .5em 0; }
+    .card-back .armor .shield {
+      -ms-grid-row: 1;
+      -ms-grid-column: 2;
+      grid-area: shield;
+      height: 1.5em;
+      width: 1.5em;
+      -ms-grid-row-align: right;
+      align-self: right;
+      background-image: url(/dist/scr/svg/shield-black.svg);
+      background-size: cover;
+      background-position: center center; }
+    .card-back .armor .title {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      grid-area: title; }
+    .card-back .armor .type {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 2;
+      grid-area: type; }
+  .card-back .button {
+    -ms-grid-row: 7;
+    -ms-grid-column: 3;
+    grid-area: button;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .card-back .button button {
+      height: auto;
+      width: 90%;
+      margin: 0 1em 4px 0;
+      border: none;
+      padding: 1em 0;
+      background-color: darkslategrey;
+      -webkit-box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+      color: white;
+      font-weight: bold;
+      font-size: .7em;
+      text-transform: uppercase;
+      cursor: pointer; }
+
+.hide {
+  display: none; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url(https://picsum.photos/id/1021/1080?greyscale);
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden; }
+
+#wrapper {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  max-width: 960px;
+  position: relative;
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.rotate-front {
+  -webkit-transform: perspective(1300px) rotateY(180deg);
+  transform: perspective(1300px) rotateY(180deg); }
+
+.rotate-back {
+  -webkit-transform: perspective(1300px) rotateY(0deg);
+  transform: perspective(1300px) rotateY(0deg); }
